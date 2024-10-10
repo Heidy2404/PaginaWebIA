@@ -1,0 +1,9 @@
+Hola
+Andy Cómo estás Vamos a hacer la lista de de las compras de la semana eh anótate ahí jabón Pizza chocolates melón sandía pan cereales yogurt leche carne de pollo carne de res panqueques y unas tortillas y queso
+
+
+Diagrama de clase, Diagrama de Secuencia.
+
+Tablas gerarquisadas con busquedad recursivas
+
+hacer un chatbot, atravez del texto que se genere, y preguntarle al chatboy

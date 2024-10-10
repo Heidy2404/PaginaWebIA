@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>IA Transcribe Audio</title>
+
+		<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/assets/css/main.css">
+		<link rel="stylesheet" href="/static/assets/css/normalize.css">
+		<link rel="stylesheet" href="/static/assets/css/responsive.css">
+		<link rel="stylesheet" href="/static/assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/assets/fonts/simple-line-icons.css">
+		<link rel="stylesheet" href="/static/assets/css/slicknav.css">
+		<link rel="stylesheet" href="/static/assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="/static/assets/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="/static/assets/css/nivo-lightbox.css">
+		<link rel="stylesheet" href="/static/assets/css/animated-headline.css">
+		<link rel="stylesheet" href="/static/assets/css/animate.css">
+		<link rel="stylesheet" href="/static/assets/css/style.css">
+
+	
+		
+	</head>
+  
+	<body data-spy="scroll" data-offset="80">
+
+		<!-- START PRELOADER -->
+			<div class="preloader">
+				<div class="loader">
+					<div class="loader-outter"></div>
+					<div class="loader-inner"></div>
+
+					<span>R</span>
+				</div>
+			</div>
+		<!-- END PRELOADER -->		
+		
+		<!-- START NAVBAR -->
+			<nav class="navbar navbar-toggleable-sm fixed-top navbar-light bg-faded site-navigation dark_bg_menu">
+				<div class="container">
+					<a class="navbar-brand" href="#"><p>Transcribe your Audio</p></a>          
+				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+						<ul class="navbar-nav">
+						  <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+						  <li class="nav-item"><a class="nav-link" href="#portfolio">Transcribe</a></li>				  			
+
+						  <li class="nav-item"><a class="nav-link" href="#blog">Services IA</a></li>				
+						</ul>
+				    </div>
+				</div>
+			</nav>      
+		<!-- END NAVBAR -->
+		
+		<!-- Hero Area Start -->
+			<section id="home" class="dark_bg">
+				<div id="particles-js"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="banner_content">
+								<h3>Hi There,</h3>
+								<h1 class="cd-headline clip">
+									<span class="fw_600">We're <area shape="default" coords="" href="" alt=""></span>
+									<span class="cd-words-wrapper">
+										<b class="is-visible fw_600">Heidy Maria Javier</b>
+										<b class="is-visible fw_600">Andy Augusto Encarnacion Morel</b>
+										<b class="fw_600">Web Designer</b>
+										<b class="fw_600">Web Developer</b>
+										<b class="fw_600">Students</b>
+									</span>
+								</h1>
+								<p>Our powerful tool converts audio to text quickly and accurately. Whether for personal or professional use, we make transcription easy and reliable. Try it now!</p>
+								<a href="#" class="btn btn-secondary banner_btn">Hire Me</a>								
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="banner-images">
+								<img src="/static/assets/img/Avatar.jpeg-removebg-preview.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+		<!-- Hero Area End -->
+		
+		<section id="portfolio" class="dark_bg section-padding">
+			<!-- Container Starts -->
+			<div class="container">        
+				<h2 class="section-title wow flipInX" data-wow-delay="0.4s">IA THE EVOLUTION OF  <span>THE WORLD</span></h2>
+				<h2 class="section-title wow flipInX" data-wow-delay="0.4s">Transcribe <span>WITH ME</span></h2>
+				<div class="row">          
+					<div class="col-md-12">
+						<!-- Portfolio Controller/Buttons -->
+						<div class="controls text-center">
+							<a class="filter btn btn-common" id="uploadAudioBtn">
+								Upload Audio
+							</a>
+							<a class="filter btn btn-common" id="recordAudioBtn">
+								Record Audio
+							</a>
+						</div>
+						<!-- Portfolio Controller/Buttons Ends-->
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	<section id="services" class="dark_bg services section-padding">
+    <h2 class="section-subtile" data-wow-delay="1.8s">speech  <span>recognition</span></h2>
+    <div class="container">
+        <div class="row">
+            <!-- Formulario para subir archivo -->
+            <form id="audioForm" enctype="multipart/form-data" style="display: none;">
+                <input type="file" id="audioFile" name="audioFile" accept="audio/*">
+                <button type="submit">Upload and Transcribe</button>
+            </form>
+            <form id="recordForm" style="display: none;">
+                <button type="button" id="startRecording">start recording</button>
+                <button type="button" id="stopRecording" disabled>Stop Recording</button>
+                <p id="recordingStatus"></p>
+            </form>
+            <!-- Área para mostrar el resultado de la transcripción -->
+            <p id="result"></p>
+            <div id="avatarContainer" style="width: 200px; height: 200px; margin: auto;">
+                <div id="avatar"></div>
+            </div>
+        </div>
+
+		
+		<div id="chatbotResponse"></div>
+    </div>
+</section>
+		
+	
+		
+		
+		<!-- START BLOG -->
+			<div id="blog" class="dark_bg blog-area section-padding">
+				<h2 class="section-title wow flipInX" data-wow-delay="0.4s">Interesting <span> IA </span> to make your <span>life easier</span> </h2>
+				<div class="container">							
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInLeft">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://chatgpt.com/"><img src="/static/assets/img/chatgpt.jpg" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://chatgpt.com/"><h4>
+											"ChatGpt"</h4></a>
+										<small><i class="fa fa-clock-o"></i>November, 2022</small>
+										<span>| ChatGpt</span>											
+										<p>ChatGPT is an artificial intelligence created by OpenAI, based on the GPT-3.5 model. Its purpose is to assist and maintain conversations with users.</p>
+										<a target="_blank" href="https://chatgpt.com/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInUp">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://www.humanizeai.io/"><img src="/static/assets/img/Humanaizer.webp" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://www.humanizeai.io/"><h4>"Humanaizer"</h4></a>
+										<small><i class="fa fa-clock-o"></i>February,2024</small>
+										<span>| Humanaizer</span>											
+										<p> Humanizer is a tool that adjusts language to make it sound more natural and human, improving the interaction between humans and digital systems.</p>
+										<a target="_blank" href="https://www.humanizeai.io/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInRight">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://leonardo.ai/"><img src="/static/assets/img/LEONARDOAI.jpeg" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://leonardo.ai/"><h4>"LEONARDOAI"</h4></a>
+										<small><i class="fa fa-clock-o"></i>November, 2023</small>
+										<span>|LeonardoAI</span>											
+										<p> LeonardoAI is an artificial intelligence platform that offers advanced tools for creating and editing images, text, and other multimedia content.</p>
+										<a target="_blank" href="https://leonardo.ai/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--- END CONTAINER -->	
+
+				<div class="container">							
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInLeft">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://playground.com/"><img src="/static/assets/img/PLAYGROUND.jpg" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://playground.com/"><h4>"PlayGroundAI"</h4></a>
+										<small><i class="fa fa-clock-o"></i>July 31, 2021</small>
+										<span>| PlayGroundAI</span>											
+										<p> PlaygroundAI is a platform that allows generating and editing images using artificial intelligence, offering tools to create customized art and visuals.</p>
+										<a target="_blank" href="https://playground.com/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInUp">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://www.synthesia.io/"><img src="/static/assets/img/sYNTESIA.png" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://www.synthesia.io/"><h4>"SYNTHESIA"</h4></a>
+										<small><i class="fa fa-clock-o"></i>Junio, 2023</small>
+										<span>| SYNTHESIA</span>											
+										<p>Sinthesia is an AI platform that generates multimedia content, such as images and videos, using advanced processing and automated creation techniques.</p>
+										<a target="_blank" href="https://www.synthesia.io/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-xs-12">
+							<div class="single_blog wow fadeInRight">
+								<div class="blog-thumb">
+									<div class="blog-image">
+									   <a target="_blank" href="https://kaiber.ai/"><img src="/static/assets/img/KAIBERAI.webp" class="img-responsive" alt=""/></a>
+									</div>
+									<div class="blog-info">
+										<a target="_blank" href="https://kaiber.ai/"><h4>"KAIBER.AI"</h4></a>
+										<small><i class="fa fa-clock-o"></i>Enero, 2024</small>
+										<span>|KAIBER</span>											
+										<p>Kaiber is an artificial intelligence tool that facilitates the creation of customized videos and animations from text and other inputs.</p>
+										<a target="_blank" href="https://kaiber.ai/" class="btn blog_btn btn-secondary">Visit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- END BLOG -->
+
+           	<!-- Funfacts Section Start -->
+			<section class="dark_bg funfacts-area pb_80 ">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-3">
+							<div class="funfact">
+								<i class="icofont-printer"></i>
+								<h3><span class="counterUp">2</span>+</h3>
+								<p>Successul Projects</p>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-3">
+							<div class="funfact">
+								<i class="icofont-users"></i>
+								<h3><span class="counterUp">2</span>+</h3>
+								<p>Happy Clients</p>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-3">
+							<div class="funfact">
+								<i class="icofont-users-alt-5"></i>
+								<h3><span class="counterUp">2</span>+</h3>
+								<p>Team Members</p>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-3">
+							<div class="funfact">
+								<i class="icofont-award"></i>
+								<h3><span class="counterUp">0</span> 😭</h3>
+								<p>Winning Awards</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+       
+			<footer class="footer-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+								<p>Copyright © 2024 Heidy Maria, Andy Augusto </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		<!-- Footer Section End -->
+
+		<!-- Go to Top Link -->
+		<a href="#" class="back-to-top">
+			<i class="fa fa-arrow-up"></i>
+		</a>
+
+		
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="/static/assets/js/jquery-min.js"></script>
+		<script src="/static/assets/js/popper.min.js"></script>
+		<script src="/static/assets/js/bootstrap.min.js"></script>
+		<script src="/static/assets/js/modernizr-2.8.3.min.js"></script>
+		<script src="/static/assets/js/particles.min.js"></script>
+		<script src="/static/assets/js/app.js"></script>
+		<script src="/static/assets/js/jquery.nav.js"></script>
+		<script src="/static/assets/js/smooth-scroll.js"></script>
+		<script src="/static/assets/js/owl.carousel.min.js"></script>
+		<script src="/static/assets/js/jquery.mixitup.js"></script>
+		<script src="/static/assets/js/animated-headline.js"></script>
+		<script src="/static/assets/js/jquery.counterup.min.js"></script>
+		<script src="/static/assets/js/waypoints.min.js"></script>
+		<script src="/static/assets/js/wow.js"></script>
+		<script src="/static/assets/js/jquery.easing.min.js"></script>  
+		<script src="/static/assets/js/nivo-lightbox.js"></script>
+		<script src="/static/assets/js/form-contact.js"></script>
+		<script src="/static/assets/js/main.js"></script>
+<script src="/static/assets/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ffmpeg.js/4.4.0/ffmpeg.min.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=iNVcr8em"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js"></script>
+<script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
+
+		
+		
+		
+	</body>
+</html>
